@@ -1,0 +1,16 @@
+ros-melodic-tvm-vendor (0.7.1-1stretch) stretch; urgency=high
+
+  * Updating LLVM dependency.
+  * Moving catkin_package() back to after add_library().
+  * Contributors: Joshua Whitley
+
+ -- Josh Whitley <josh.whitley@autoware.org>  Tue, 01 Dec 2020 06:00:00 -0000
+
+ros-melodic-tvm-vendor (0.7.0-1stretch) stretch; urgency=high
+
+  * Initial release.
+  * Contributors: Joshua Whitley
+
+ -- Josh Whitley <josh.whitley@autoware.org>  Mon, 16 Nov 2020 06:00:00 -0000
+
+
