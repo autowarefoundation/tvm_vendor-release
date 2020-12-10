@@ -1,0 +1,12 @@
+Source: ros-dashing-tvm-vendor
+Section: misc
+Priority: optional
+Maintainer: Josh Whitley <josh.whitley@autoware.org>
+Build-Depends: debhelper (>= 9.0.0), git, libopenblas-dev, libxml2-dev, ros-dashing-ament-cmake, ros-dashing-ros-environment, ros-dashing-ros-workspace
+Homepage: https://tvm.apache.org/
+Standards-Version: 3.9.2
+
+Package: ros-dashing-tvm-vendor
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, git, libopenblas-dev, libxml2-dev, ros-dashing-ros-workspace
+Description: Wrapper around Apache TVM to make it available to the ROS ecosystem.
