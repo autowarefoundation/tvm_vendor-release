@@ -1,3 +1,26 @@
+## tvm_vendor (foxy) - 0.7.2-1
+
+The packages in the `tvm_vendor` repository were released into the `foxy` distro by running `/usr/bin/bloom-release --ros-distro foxy --track foxy tvm_vendor` on `Wed, 16 Dec 2020 16:16:23 -0000`
+
+The `tvm_vendor` package was released.
+
+Version of package(s) in repository `tvm_vendor`:
+
+- upstream repository: https://github.com/autowarefoundation/tvm_vendor.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `0.7.2-1`
+
+Versions of tools used:
+
+- bloom version: `0.10.0`
+- catkin_pkg version: `0.4.23`
+- rosdep version: `0.20.0`
+- rosdistro version: `0.8.3`
+- vcstools version: `0.1.42`
+
+
 ## tvm_vendor (dashing) - 0.7.2-1
 
 The packages in the `tvm_vendor` repository were released into the `dashing` distro by running `/usr/bin/bloom-release --ros-distro dashing --track dashing tvm_vendor` on `Thu, 10 Dec 2020 06:01:33 -0000`
