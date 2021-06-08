@@ -1,3 +1,17 @@
+# Copyright 2020-2021 The Autoware Foundation, Arm Ltd.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 project(tvm_vendor)
 
 find_package(ros_environment REQUIRED)
@@ -32,14 +46,19 @@ endif()
 
 include(ExternalProject)
 
+set(PATCH_FILE ${CMAKE_CURRENT_SOURCE_DIR}/config.cmake.patch)
+if(ROS_VERSION EQUAL 2)
+  set(PATCH_FILE ${CMAKE_CURRENT_SOURCE_DIR}/config.cmake.gpu.patch)
+endif()
+
 ExternalProject_Add(tvm-build
   GIT_REPOSITORY https://github.com/apache/incubator-tvm
   GIT_TAG v0.7.0
   GIT_SHALLOW TRUE
   BUILD_IN_SOURCE TRUE
-  PATCH_COMMAND git apply ${CMAKE_CURRENT_SOURCE_DIR}/config.cmake.patch
+  PATCH_COMMAND git apply ${PATCH_FILE}
   COMMAND cp <SOURCE_DIR>/cmake/config.cmake <SOURCE_DIR>
-  CONFIGURE_COMMAND ${CMAKE_COMMAND} -DCMAKE_POSITION_INDEPENDENT_CODE=ON
+  CONFIGURE_COMMAND ${CMAKE_COMMAND} -DCMAKE_POSITION_INDEPENDENT_CODE=ON .
   INSTALL_COMMAND ""
 )
 
@@ -115,7 +134,7 @@ if(${ROS_VERSION} EQUAL 1)
     DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   )
 elseif(${ROS_VERSION} EQUAL 2)
-  ament_export_include_directories(include)
+  ament_export_include_directories(include include/tvm_vendor)
   ament_export_libraries(tvm tvm_runtime)
 
   install(DIRECTORY ${SOURCE_DIR}/include/tvm/runtime/
@@ -143,6 +162,12 @@ elseif(${ROS_VERSION} EQUAL 2)
   install(FILES ${SOURCE_DIR}/3rdparty/dmlc-core/libdmlc.a
     DESTINATION lib
   )
+
+  install(
+    FILES
+      cmake/tvm_runtimeConfig.cmake
+      cmake/tvmConfig.cmake
+    DESTINATION share/${PROJECT_NAME}/cmake)
 
   ament_package()
 endif()
