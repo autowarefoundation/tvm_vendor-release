@@ -1,0 +1,37 @@
+ros-galactic-tvm-vendor (0.7.3-1focal) focal; urgency=high
+
+  * Merge pull request #6 <https://github.com/autowarefoundation/tvm_vendor/issues/6> from kurcha01-arm/main
+    Fix 'No source or binary directory provided'
+  * Merge pull request #5 <https://github.com/autowarefoundation/tvm_vendor/issues/5> from kurcha01-arm/main
+    Fix header inclusion, export without namespacing
+  * Merge pull request #4 <https://github.com/autowarefoundation/tvm_vendor/issues/4> from kurcha01-arm/main
+    Fix dlpack and tvm-runtime header inclusion
+  * Merge pull request #3 <https://github.com/autowarefoundation/tvm_vendor/issues/3> from ambroise-arm/vulkan-backend
+    Add Vulkan backend
+  * Contributors: Ambroise Vincent, Joshua Whitley, Kurtis Charnock
+
+ -- Josh Whitley <josh.whitley@autoware.org>  Tue, 08 Jun 2021 05:00:00 -0000
+
+ros-galactic-tvm-vendor (0.7.2-1focal) focal; urgency=high
+
+  * Removing LLVM dependency.
+  * Contributors: Joshua Whitley
+
+ -- Josh Whitley <josh.whitley@autoware.org>  Wed, 09 Dec 2020 06:00:00 -0000
+
+ros-galactic-tvm-vendor (0.7.1-1focal) focal; urgency=high
+
+  * Updating LLVM dependency.
+  * Moving catkin_package() back to after add_library().
+  * Contributors: Joshua Whitley
+
+ -- Josh Whitley <josh.whitley@autoware.org>  Tue, 01 Dec 2020 06:00:00 -0000
+
+ros-galactic-tvm-vendor (0.7.0-1focal) focal; urgency=high
+
+  * Initial release.
+  * Contributors: Joshua Whitley
+
+ -- Josh Whitley <josh.whitley@autoware.org>  Mon, 16 Nov 2020 06:00:00 -0000
+
+

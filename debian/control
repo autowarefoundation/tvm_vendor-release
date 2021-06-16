@@ -1,0 +1,12 @@
+Source: ros-galactic-tvm-vendor
+Section: misc
+Priority: optional
+Maintainer: Josh Whitley <josh.whitley@autoware.org>
+Build-Depends: debhelper (>= 9.0.0), git, libopenblas-dev, libvulkan-dev, libxml2-dev, ros-galactic-ament-cmake, ros-galactic-ros-environment, spirv-headers, spirv-tools, ros-galactic-ros-workspace
+Homepage: https://tvm.apache.org/
+Standards-Version: 3.9.2
+
+Package: ros-galactic-tvm-vendor
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, git, libopenblas-dev, libvulkan-dev, libxml2-dev, spirv-headers, spirv-tools, ros-galactic-ros-workspace
+Description: Wrapper around Apache TVM to make it available to the ROS ecosystem.
